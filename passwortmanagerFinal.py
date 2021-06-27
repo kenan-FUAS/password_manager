@@ -28,7 +28,15 @@ def getsys():
         homedir = os.path.expanduser("~")
         os.chdir("/mnt/c/users/Mohammed/pycharmprojects/pythonpassword")
         return False
-
+if os.name =="nt":
+        current_user = os.getlogin()
+        os.chdir(r"C:\Users\\"+current_user+"\Desktop")
+else:
+        #current_user= getpass.getuser() #eine Funktion, die den Username übernimmt aber, da der Username bei uns in Ubuntu anders genannt ist, wurde direkt der Benutzername vom eignen System übernommen
+        homedir = os.path.expanduser("~")
+        os.chdir("/mnt/c/users/Mohammed/pycharmprojects/pythonpassword")
+       
+    
 pfad = os.getcwd()      #Pfad, in dem die Ordner gespeichert werden
 
 
